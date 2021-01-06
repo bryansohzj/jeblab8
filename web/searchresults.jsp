@@ -38,8 +38,8 @@
                 %>
                 <tr>
                     <td><%=product.getItem()%></td>
-                    <td><%=product.getPricePerUnit()%></td>
                     <td><%=product.getDescription()%></td>
+                    <td><%=product.getPricePerUnit()%></td>
                 </tr>
                 <%
                         }
