@@ -1,16 +1,19 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
     <head>
-        <title>TODO supply a title</title>
+        <title>JED Lab 8</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <div>TODO a</div>
+       <form name="user" action="validate" method="post">
+            
+                Full Name : <input type="text" name="name" required/><br/>
+                Email Address : <input type="text" name="emailaddress" required/><br/>
+                Delivery Address : <input type="text" name="deliveryAddress" required/><br/>
+                Postal Code : <input type="text" name="postalcode" placeholder="Six Digits Only" pattern="[0-9]{6}" title="Six Digits Only"  required/><br/>
+                Contact Number : <input type="text" name="contactnumber" placeholder="Eight Digits Only" pattern="[0-9]{8}" title="Eight Digits Only"  required/><br/>
+            <input type="submit" value="Register"/> <br/>
+        </form>
     </body>
 </html>
