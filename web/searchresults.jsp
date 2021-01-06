@@ -22,7 +22,8 @@
             <table>
                 <tr>
                     <th>Item</th>
-                    <th>Price Per</th>
+                    <th>Description</th>
+                    <th>Price Per Unit</th>
                 </tr>
                 <%
                     List<Products> searchresult = (List<Products>)session.getAttribute("searchresult");
@@ -47,7 +48,7 @@
             </table>
         </p>
         <hr/>
-        <a href="search.html">Do another search</a><br/>
+        <a href="search.jsp">Do another search</a><br/>
         <a href="index.html">Go back to menu</a>
     </body>
 </html>

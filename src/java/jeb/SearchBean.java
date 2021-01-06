@@ -30,7 +30,7 @@ public class SearchBean {
     Connection connection = null;
     PreparedStatement statement = null;
     ResultSet resultset = null;
-    public List<Products> searchBook(String searchTerm){
+    public List<Products> searchProduct(String searchTerm){
         List<Products> searchResult = new ArrayList<>();
         try {
             String sql = "select * from catalogue cata inner join category cate on cata.categoryid = cate.id where item like ?";
@@ -48,8 +48,10 @@ public class SearchBean {
                 //Create a book object
                 Products product = new Products();
                 //Retrieve the data from the recordset and store it into a book object.
-                
-//              Store the book object into the list
+                product.setItem(resultset.getString("item"));
+                product.setDescription(resultset.getString("description"));
+                product.setPricePerUnit(Double.parseDouble(resultset.getString("ppu")));
+                //Store the book object into the list
                 searchResult.add(product);
             }
         }catch (SQLException ex) {

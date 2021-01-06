@@ -25,14 +25,14 @@ import javax.servlet.http.HttpSession;
 public class SearchServlet extends HttpServlet {
     //Inject your EJB here
     @EJB
-    private SearchBean bookManagementBean;
+    private SearchBean searchbean;
     @Override
     protected void doPost(HttpServletRequest request,
             HttpServletResponse response)
             throws IOException, ServletException{
         String searchTerm = request.getParameter("searchterm");
         List<Products> searchResult = new ArrayList<>();
-        searchResult = bookManagementBean.searchBook(searchTerm);
+        searchResult = searchbean.searchProduct(searchTerm);
         
         //Set the search term and the search results in the session
         HttpSession session = request.getSession();
