@@ -33,7 +33,7 @@ public class SearchBean {
     public List<Products> searchBook(String searchTerm){
         List<Products> searchResult = new ArrayList<>();
         try {
-            String sql = "select * from catalogue where item like ?";
+            String sql = "select * from catalogue cata inner join category cate on cata.categoryid = cate.id where item like ?";
             //Initializing
             //Get the connection from the DataSource
             connection = dsBookCatalogue.getConnection();
@@ -48,14 +48,8 @@ public class SearchBean {
                 //Create a book object
                 Products product = new Products();
                 //Retrieve the data from the recordset and store it into a book object.
-//                String isbn = resultset.getString("isbn");
-//                product.setIsbn(isbn);
-//                product.setAuthor(resultset.getString("author"));
-//                product.setTitle(resultset.getString("title"));
-//                product.setYear(resultset.getDate("year"));
-//                product.setPublisher(resultset.getString("publisher"));
-//                product.setAbout(resultset.getString("about"));
-                //Store the book object into the list
+                
+//              Store the book object into the list
                 searchResult.add(product);
             }
         }catch (SQLException ex) {
