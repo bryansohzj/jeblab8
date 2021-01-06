@@ -33,7 +33,7 @@ public class SearchBean {
     public List<Products> searchBook(String searchTerm){
         List<Products> searchResult = new ArrayList<>();
         try {
-            String sql = "select * from book where title like ?";
+            String sql = "select * from catalogue where item like ?";
             //Initializing
             //Get the connection from the DataSource
             connection = dsBookCatalogue.getConnection();
